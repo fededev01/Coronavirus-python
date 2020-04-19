@@ -1,4 +1,4 @@
-genericlist = [positivi, morti, guariti, totali]
+genericlist = ["positivi", "guariti", "morti", "totali"]
 #in cui "positivi" sono "attualmente positivi" e "totali" sono "casi totali"
 #genericlist è la lista generica
 
