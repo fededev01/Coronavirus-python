@@ -17,6 +17,7 @@ from Asia.Thailand import THg23m01
 from Asia.Japan import JPg23m01
 from USA import USg23m01
 
+#24 gennaio 2020
 from Asia.China import CNg24m01
 from Asia.South_Korea import KRg24m01
 from Asia.Thailand import THg24m01
