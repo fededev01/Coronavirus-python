@@ -41,8 +41,3 @@ from Oceania.Australia import AUg25m01
 from America.USA import USg25m01
 from Europe.France import FRg25m01
 from util.world import COMg25m01
-
-genericlist = ["positivi", "guariti", "morti", "totali"]
-#in cui "positivi" sono "attualmente positivi" e "totali" sono "casi totali"
-#genericlist è la lista generica
-
