@@ -1,0 +1,1 @@
+FRg25m01 = [3,0,3] #3 positivi, 0 morti, 3 casi totali

@@ -1,0 +1,1 @@
+NPg24m01 = [0,1] #0 deaths, 1 case
