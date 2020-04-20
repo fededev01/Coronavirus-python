@@ -34,5 +34,3 @@ from USA import USg25m01
 genericlist = ["positivi", "guariti", "morti", "totali"]
 #in cui "positivi" sono "attualmente positivi" e "totali" sono "casi totali"
 #genericlist è la lista generica
-
-print(JPg23m01)
