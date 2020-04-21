@@ -65,6 +65,22 @@ from America.USA import USg26m01
 from Europe.France import FRg26m01
 from util.world import COMg26m01
 
+#27 gennaio 2020
+from Asia.China import CNg27m01
+from Asia.Japan import JPg27m01
+from Asia.South_Korea import KRg27m01
+from Asia.Vietnam import VNg27m01
+from Asia.Singapore import SGg27m01
+from Oceania.Australia import AUg27m01
+from Asia.Malaysia import MYg27m01
+from Asia.Thailand import THg27m01
+from Asia.Nepal import NPg27m01
+from America.USA import USg27m01
+from America.Canada import CAg27m01
+from Europe.France import FRg27m01
+from util.world import COMg27m01
+
+
 print("Input a nation you want know about.\n")
 print("You can also choose for info about the whole world.\n")
 nation = input("Write the nation name in english:\n")
@@ -108,6 +124,11 @@ elif nation=="China" and month=="January" and day==26:
  print(CNg26m01[0])
  confirmed()
  print(CNg26m01[1])
+elif nation=="China" and month=="January" and day==27:
+ deaths()
+ print(CNg27m01[0])
+ confirmed()
+ print(CNg27m01[1])
  #South Korea
  #KR
  #---------------------------------------
@@ -142,6 +163,11 @@ elif nation=="South Korea" and month=="January" and day==26:
  print(KRg26m01[0])
  confirmed()
  print(KRg26m01[1]) 
+elif nation=="South Korea" and month=="January" and day==27:
+ deaths()
+ print(KRg27m01[0])
+ confirmed()
+ print(KRg27m01[1]) 
 #Thailand
 #TH
 #------------------------------------------ 
@@ -176,6 +202,11 @@ elif nation=="Thailand" and month=="January" and day==26:
  print(THg26m01[0])
  confirmed()
  print(THg26m01[1])
+elif nation=="Thailand" and month=="January" and day==27:
+ deaths()
+ print(THg27m01[0])
+ confirmed()
+ print(THg27m01[1])
 #Japan
 #JP
 #------------------------------------------ 
@@ -209,7 +240,12 @@ elif nation=="Japan" and month=="January" and day==26:
  deaths()
  print(JPg26m01[0])
  confirmed()
- print(JPg26m01[1]) 
+ print(JPg26m01[1])
+elif nation=="Japan" and month=="January" and day==27:
+ deaths()
+ print(JPg27m01[0])
+ confirmed()
+ print(JPg27m01[1])
 #Vietnam
 #VN
 #------------------------------------------ 
@@ -228,7 +264,12 @@ elif nation=="Vietnam" and month=="January" and day==26:
  deaths()
  print(VNg26m01[0])
  confirmed()
- print(VNg26m01[1]) 
+ print(VNg26m01[1])
+elif nation=="Vietnam" and month=="January" and day==27:
+ deaths()
+ print(VNg27m01[0])
+ confirmed()
+ print(VNg27m01[1])
 #Singapore
 #SG
 #------------------------------------------ 
@@ -248,6 +289,11 @@ elif nation=="Singapore" and month=="January" and day==26:
  print(SGg26m01[0])
  confirmed()
  print(SGg26m01[1])
+elif nation=="Singapore" and month=="January" and day==27:
+ deaths()
+ print(SGg27m01[0])
+ confirmed()
+ print(SGg27m01[1])
 #Nepal
 #NP
 #------------------------------------------ 
@@ -262,6 +308,11 @@ elif nation=="Nepal" and month=="January" and day==26:
  print(NPg26m01[0])
  confirmed()
  print(NPg26m01[1])
+elif nation=="Nepal" and month=="January" and day==27:
+ deaths()
+ print(NPg27m01[0])
+ confirmed()
+ print(NPg27m01[1])
 #Australia
 #AU
 #------------------------------------------ 
@@ -276,6 +327,11 @@ elif nation=="Australia" and month=="January" and day==26:
  print(AUg26m01[0])
  confirmed()
  print(AUg26m01[1])
+elif nation=="Australia" and month=="January" and day==27:
+ deaths()
+ print(AUg27m01[0])
+ confirmed()
+ print(AUg27m01[1])
 #France
 #FR
 #------------------------------------------ 
@@ -290,6 +346,11 @@ elif nation=="France" and month=="January" and day==26:
  print(FRg26m01[0])
  confirmed()
  print(FRg26m01[1])
+elif nation=="France" and month=="January" and day==27:
+ deaths()
+ print(FRg27m01[0])
+ confirmed()
+ print(FRg27m01[1])
 #USA
 #US
 #------------------------------------------ 
@@ -314,6 +375,20 @@ elif nation=="USA" and month=="January" and day==26:
  print(USg26m01[0])
  confirmed()
  print(USg26m01[1])
+elif nation=="USA" and month=="January" and day==27:
+ deaths()
+ print(USg27m01[0])
+ confirmed()
+ print(USg27m01[1])
+#Canada
+#CA
+#------------------------------------------ 
+#January
+elif nation=="Canada" and month=="January" and day==27:
+ deaths()
+ print(CAg27m01[0])
+ confirmed()
+ print(CAg27m01[1]) 
 #Malaysia
 #MY
 #------------------------------------------ 
@@ -322,7 +397,12 @@ elif nation=="Malaysia" and month=="January" and day==26:
  deaths()
  print(MYg26m01[0])
  confirmed()
- print(MYg26m01[1])  
+ print(MYg26m01[1])
+elif nation=="Malaysia" and month=="January" and day==27:
+ deaths()
+ print(MYg27m01[0])
+ confirmed()
+ print(MYg27m01[1]) 
 #World
 #COM
 #---------------------------------
@@ -356,6 +436,11 @@ elif nation=="World" and month=="January" and day==26:
  deaths()
  print(COMg26m01[0])
  confirmed()
- print(COMg26m01[1])          
+ print(COMg26m01[1])  
+elif nation=="World" and month=="January" and day==27:
+ deaths()
+ print(COMg27m01[0])
+ confirmed()
+ print(COMg27m01[1])   
 else:
  print("Unknown input")           
