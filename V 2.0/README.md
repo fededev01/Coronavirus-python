@@ -1,3 +1,4 @@
+# V 2.0
 Si tratta di una piccola versione del progetto,
 la seconda per la precisione, il cui scopo è quello
 di mostrare come possono essere utilizzate le liste, 
