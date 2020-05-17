@@ -1,0 +1,1 @@
+CAg27m01 = [0,1] #0deaths, 1 case
