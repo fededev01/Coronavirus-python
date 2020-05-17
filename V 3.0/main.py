@@ -1,17 +1,17 @@
-import util.functions
-import Asia.China
-import Asia.Japan 
-import Asia.South_Korea 
-import Asia.Vietnam 
-import Asia.Singapore 
-import Oceania.Australia 
-import Asia.Malaysia 
-import Asia.Thailand 
-import Asia.Nepal 
-import America.USA 
-import America.Canada 
-import Europe.France 
-import util.world 
+from util.functions import *
+from Asia.China import *
+from Asia.Japan import *
+from Asia.South_Korea import *
+from Asia.Vietnam import *
+from Asia.Singapore import *
+from Oceania.Australia import *
+from Asia.Malaysia import *
+from Asia.Thailand import *
+from Asia.Nepal import *
+from America.USA import *
+from America.Canada import *
+from Europe.France import *
+from util.world import *
 
 
 print("Input a nation you want know about.\n")
@@ -376,4 +376,4 @@ elif nation=="World" and month=="January" and day==27:
  confirmed()
  print(COMg27m01[1])   
 else:
- print("Unknown input")           
+ print("")           
