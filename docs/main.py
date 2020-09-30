@@ -1,5 +1,5 @@
-from Italia import *
-from Spagna import *
+import Nations.Italia 
+import Nations.Spagna
 day = input("Insert here the date you want see the info e.g. 24/03/2020\n")
 nation = str(input("Insert here your nation\n"))
 if nation == "Italy":
