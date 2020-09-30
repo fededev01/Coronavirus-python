@@ -18,7 +18,7 @@ def _29_02(x):
    print(dati[5])        
 default = "Unknown input"    
     
-switch = {
+Italia = {
    '24/02/2020' : _24_02,
    '25/02/2020' : _25_02,
    '26/02/2020' : _26_02,
