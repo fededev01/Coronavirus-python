@@ -34,3 +34,11 @@ Spagna = {
    '30/01/2020' : _30_01,
    '31/01/2020' : _31_01,
 }
+
+if nation == "Spain":
+   try:
+      Spagna[day](day)
+   except:
+      print(default)       
+else:
+   pass
