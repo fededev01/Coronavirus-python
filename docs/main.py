@@ -1,2 +1,2 @@
-from Spagna import *
-from Italia import *
+from Nations.Spagna import *
+from Nations.Italia import *
