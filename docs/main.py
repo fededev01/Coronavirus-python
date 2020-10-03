@@ -2,6 +2,7 @@ from pip._vendor import requests
 import json
 import datetime
 from datetime import timedelta
+#import numpy as np
 
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
@@ -9,15 +10,15 @@ reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
 
-data = "2020/01/22"
 nation = "Italy"
 
-data_2 = data + timedelta(days = 1)
-
-nuovi_casi = []
+nuovi_casi = [0]
+dictlist = []
 
 for righe in dati[nation]:
-   x = dati[data]["confirmed"]
-   y = dati[data_2]["confirmed"]
-   z = y - x
+   
+   x = righe
+   y = next(righe+1)
+   z = y - z
    nuovi_casi.append(z)
+   print(z)
