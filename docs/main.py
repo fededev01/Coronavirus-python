@@ -1,24 +1,21 @@
 from pip._vendor import requests
 import json
-import datetime
-from datetime import timedelta
-#import numpy as np
-
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
 reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
-
 nation = "Italy"
 
-nuovi_casi = [0]
-dictlist = []
+date = []   
+fir = []
+for info in dati[nation]:
+  fir.append(info["confirmed"])
+  date.append(info["date"])
+    
+lung = len(fir)  
+sec = []
+for itemA in fir[1:lung]:
+  sec.append(itemA)
 
-for righe in dati[nation]:
-   
-   x = righe
-   y = next(righe+1)
-   z = y - z
-   nuovi_casi.append(z)
-   print(z)
+nuovi_casi = []  
