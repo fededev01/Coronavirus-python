@@ -18,13 +18,14 @@ nuovi = np.array([0])
 list = []
 variables = True 
 while variables == True:
-  if len(fir) == 0:
-    variables = False
-  else:    
+  if len(fir) > 0:
     for n in fir:
       z = sec[1] - sec[0]
       list.append(z)
       np.delete(sec, [0])
+  else:    
+    variables = False
+
 
 list_arr = np.array(list)
 nuovi_casi = np.concatenate((nuovi, list_arr))
