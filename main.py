@@ -1,33 +1,31 @@
 import requests
 import json
-import numpy as np
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
 reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
 nation = "Italy"
-   
+
+date = []   
 fir = []
 for info in dati[nation]:
-  fir.append(info["confirmed"])  
+  fir.append(info["confirmed"])
+  date.append(info["date"])
+   
+lung = len(fir)  
+sec = []
+for itemA in fir[1:lung]:
+  sec.append(itemA)
 
-sec = np.array(fir)
-
-nuovi = np.array([0]) 
-list = []
-variables = True 
-while variables == True:
-  if len(fir) == 0:
-    variables = False
-  else:    
-    for n in fir:
-      z = sec[1] - sec[0]
-      list.append(z)
-      np.delete(sec, [0])
-
-list_arr = np.array(list)
-nuovi_casi = np.concatenate((nuovi, list_arr))
+nuovi_casi = [0]  
+for x in fir:
+  x = fir[0]
+  y = sec[0]
+  z = y - x
+  nuovi_casi.append(z)
+  del fir[0]
+  del sec[0]
 
 
 for cat in enumerate(nuovi_casi, 1):
