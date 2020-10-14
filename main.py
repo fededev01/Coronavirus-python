@@ -12,7 +12,8 @@ cosa = str(input("Insert here what do you want receive\n"))
 resp = dati[nation]
 data = []
 for righe in dati[nation]:
-  data.append(righe["date"])
+    strdata = datetime.datetime.strptime(righe['date'], "%Y-%m-%d")
+    data.append(strdata.strftime("%d/%m/%Y"))
 
 if cosa == "nuovi casi":
   fir = []
@@ -26,9 +27,6 @@ if cosa == "nuovi casi":
     del fir[0]
     if len(fir) == 1:
       break
-#  for righe in resp:
-#    data = datetime.datetime.strptime(righe['date'], "%Y-%m-%d")
-#    strdata = data.strftime("%d/%m/%Y")
   while len(nuovi_casi) > 0:
         print(data[0], nuovi_casi[0])
         del data[0]
