@@ -16,20 +16,12 @@ sec = np.array(fir)
 
 nuovi = np.array([0]) 
 list = []
-variables = True 
-while variables == True:
-  if len(fir) > 0:
-    for n in fir:
-      z = sec[1] - sec[0]
-      list.append(z)
-      np.delete(sec, [0])
-  else:    
-    variables = False
+ 
+while len(fir) > 0:
+  z = sec[1] - sec[0]
+  list.append(z)
+  np.delete(sec, [0])
+  del fir [0]
+  for cat in enumerate(list, 1):
+    print(cat)
 
-
-list_arr = np.array(list)
-nuovi_casi = np.concatenate((nuovi, list_arr))
-
-
-for cat in enumerate(nuovi_casi, 1):
-  print(cat)
