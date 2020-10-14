@@ -12,17 +12,17 @@ fir = []
 for info in dati[nation]:
   fir.append(info["confirmed"])  
 
-sec = np.array(fir)
+#sec = np.array(fir)
 
 nuovi = np.array([0]) 
-list = []
+list = [0]
  
 while len(fir) > 0:
-  z = sec[1] - sec[0]
-  list.append(z)
-  np.delete(sec, [0])
+  z = fir[1] - fir[0]
+  np.append(list, z)
+  np.delete(fir, [0])
   del fir [0]
-  if len(fir) == 0:
+  if len(fir) == 1:
     break
 
 
