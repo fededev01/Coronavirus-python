@@ -19,13 +19,14 @@ for itemA in fir[1:lung]:
   sec.append(itemA)
 
 nuovi_casi = [0]  
-for x in fir:
+while len(fir) > 0:
   x = fir[0]
-  y = sec[0]
-  z = y - x
+  z = sec[0] - x
   nuovi_casi.append(z)
   del fir[0]
   del sec[0]
+  if len(fir) == 1:
+    break
 
 
 for cat in enumerate(nuovi_casi, 1):
