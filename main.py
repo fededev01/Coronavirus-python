@@ -22,6 +22,11 @@ while len(fir) > 0:
   list.append(z)
   np.delete(sec, [0])
   del fir [0]
-  for cat in enumerate(list, 1):
-    print(cat)
+  if len(fir) == 0:
+    break
+
+
+for cat in enumerate(list, 1):
+  print(cat)
+
 
