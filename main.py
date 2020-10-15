@@ -12,8 +12,8 @@ cosa = str(input("Insert here what do you want receive\n"))
 resp = dati[nation]
 data = []
 for righe in dati[nation]:
-    strdata = datetime.datetime.strptime(righe['date'], "%Y-%m-%d")
-    data.append(strdata.strftime("%d/%m/%Y"))
+  strdata = datetime.datetime.strptime(righe['date'], "%Y-%m-%d")
+  data.append(strdata.strftime("%d/%m/%Y"))
 
 if cosa == "nuovi casi":
   fir = []
@@ -28,15 +28,15 @@ if cosa == "nuovi casi":
     if len(fir) == 1:
       break
   while len(nuovi_casi) > 0:
-        print(data[0], nuovi_casi[0])
-        del data[0]
-        del nuovi_casi[0]
-        if len(nuovi_casi) == 0:
-          break
+    print(data[0], nuovi_casi[0])
+    del data[0]
+    del nuovi_casi[0]
+    if len(nuovi_casi) == 0:
+      break
 elif cosa == "confirmed" or "deaths" or "recovered":
   for info in dati[nation]:
     data = datetime.datetime.strptime(info['date'], "%Y-%m-%d")
     strdata = data.strftime("%d/%m/%Y")
     print(strdata, info[cosa])
 else:
-  print("idk")  
+  print("Input sconosciuto")  
