@@ -6,12 +6,10 @@ reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
 nation = "Italy"
-
-date = []   
+  
 fir = []
 for info in dati[nation]:
   fir.append(info["confirmed"])
-  date.append(info["date"])
    
 lung = len(fir)  
 sec = []
