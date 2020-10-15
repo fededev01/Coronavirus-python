@@ -12,18 +12,17 @@ a_strp = "29/02/2020"
 da = datetime.datetime.strptime(da_strp, "%d/%m/%Y")
 a = datetime.datetime.strptime(a_strp, "%d/%m/%Y")
 
-data = []
 days = []   
 fir = []
 for info in dati[nation]:
   fir.append(info["confirmed"])
   days.append(info["date"])
   strdata = datetime.datetime.strptime(info['date'], "%Y-%m-%d")
-  data.append(strdata.strftime("%d/%m/%Y"))
+  data = (strdata.strftime("%d/%m/%Y"))
   date_object = datetime.datetime.strptime(data, "%d/%m/%Y")
    
 results = []   
-for i in range(days[da], days[a]):
+for i in fir[da:a]:
     results.append(i)
     print(results)
 
