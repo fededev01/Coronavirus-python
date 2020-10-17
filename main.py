@@ -11,9 +11,9 @@ nation = "Italy"
 da = "01/02/2020"
 a = "29/02/2020"
 
-days = []   
-fir = []
-oth = []
+days = []   #date
+fir = []   #confirmed
+oth = []    #dati[nation]
 for info in dati[nation]:
   fir.append(info["confirmed"])
   days.append(info["date"])
@@ -23,6 +23,3 @@ for info in dati[nation]:
   date_object = datetime.datetime.strptime(data, "%d/%m/%Y")
    
 results = []   
-for i in range(fir[da:a]):
-    results.append(i)
-    print(results)
