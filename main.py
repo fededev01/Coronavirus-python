@@ -13,9 +13,6 @@ conf = "confirmed"
 
 resp = dati[nation]
 data = []
-for righe in dati[nation]:
-  strdata = datetime.datetime.strptime(righe['date'], "%Y-%m-%d")
-  data.append(strdata.strftime("%d/%m/%Y"))
 
 fir = [] 
 for i in dati[nation]:
