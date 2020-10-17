@@ -20,7 +20,6 @@ for i in dati[nation]:
 sec = np.array([fir[0:-1]])
 ter = np.array([fir[1:len(fir)]])
 nuovi_casi = ter - sec 
-
 if cosa == "nuovi casi":
   print(nuovi_casi)
 elif cosa == "confirmed" or "deaths" or "recovered":
