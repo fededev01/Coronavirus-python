@@ -8,13 +8,8 @@ url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.j
 reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
-nation = "Italy"
-cosa = "da-a"
-
-"""
 nation = str(input("Insert here a nation\n"))
 cosa = str(input("Insert here what do you want receive\n"))
-"""
 
 conf = [] 
 rec = []
