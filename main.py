@@ -8,10 +8,8 @@ reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
 nation = "Italy"
-da = "01/02/2020"
-a = "29/02/2020"
-#dad = "2020/02/01"
-#ad = "2020/02/29"
+da = "2020/02/01"
+a = "2020/02/29"
 
 one = []  
 two = []
