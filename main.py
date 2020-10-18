@@ -2,13 +2,19 @@ import requests
 import json
 import numpy as  np
 import pandas as pd
+import matplotlib.pyplot as plt 
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
 reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
+nation = "Italy"
+cosa = "da-a"
+
+"""
 nation = str(input("Insert here a nation\n"))
 cosa = str(input("Insert here what do you want receive\n"))
+"""
 
 conf = [] 
 rec = []
@@ -32,13 +38,24 @@ df['confirmed'] = conf
 df['deaths'] = mor
 df['nuovi casi'] = nuovi
 
-if cosa == "nuovi casi":
-  print(df['nuovi casi'])
-elif cosa == "confirmed":
-  print(df['confirmed'])
-elif cosa == "deaths":
-  print(df['deaths'])
-elif cosa == "recovered":
-  print(df['recovered']) 
+if cosa == "nuovi casi" or "confirmed" or "deaths" or "recovered":
+  try:
+    print(df[cosa]) 
+    plt.plot(df[cosa])
+    plt.show()
+  except KeyError:
+    if cosa == "data":
+      giorno = str(input("Insert here your day\n"))
+      print(df[giorno : giorno])
+    else:   
+      if cosa == "da-a":
+        giorno1 = str(input("Insert here your day\n"))
+        giorno2 = str(input("Insert here your day\n"))
+        x = (df[giorno1 : giorno2])
+        print(x)
+        plt.plot(x)
+        plt.show()
+      else:
+        print("Niente input")  
 else:
   print("Boh")     
