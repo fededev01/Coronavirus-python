@@ -1,7 +1,7 @@
 import requests
 import json
-import datetime
 import numpy as  np
+import pandas as pd
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
 reponse = requests.get(url)
@@ -9,23 +9,36 @@ dati = json.loads(reponse.content)
 
 nation = str(input("Insert here a nation\n"))
 cosa = str(input("Insert here what do you want receive\n"))
-conf = "confirmed"
 
-resp = dati[nation]
-data = []
-
-fir = [] 
+conf = [] 
+rec = []
+mor = []
 for i in dati[nation]:
-  fir.append(i[conf]) 
-sec = np.array([fir[0:-1]])
-ter = np.array([fir[1:len(fir)]])
-nuovi_casi = ter - sec 
+  conf.append(i["confirmed"])
+  rec.append(i["recovered"])
+  mor.append(i["deaths"])  
+
+sec = np.array([conf])
+ter = conf[1: len(conf)]
+ter.append(conf[-1])
+quar = np.array([ter])
+nuovi_casi = ter - sec
+
+nuovi = nuovi_casi.reshape(len(mor), 1)
+dates = pd.date_range('20200122', periods = len(rec))
+df = pd.DataFrame(index = dates)
+df['recovered'] = rec
+df['confirmed'] = conf
+df['deaths'] = mor
+df['nuovi casi'] = nuovi
+
 if cosa == "nuovi casi":
-  print(nuovi_casi)
-elif cosa == "confirmed" or "deaths" or "recovered":
-  for info in dati[nation]:
-    data = datetime.datetime.strptime(info['date'], "%Y-%m-%d")
-    strdata = data.strftime("%d/%m/%Y")
-    print(strdata, info[cosa])
+  print(df['nuovi casi'])
+elif cosa == "confirmed":
+  print(df['confirmed'])
+elif cosa == "deaths":
+  print(df['deaths'])
+elif cosa == "recovered":
+  print(df['recovered']) 
 else:
-  print("Input sconosciuto")  
+  print("Boh")     
