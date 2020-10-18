@@ -1,6 +1,6 @@
 import requests
 import json
-import datetime 
+import numpy as np
 import pandas as pd
 
 url = 'https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json'
@@ -10,16 +10,26 @@ dati = json.loads(reponse.content)
 nation = "Italy"
 da = "01/02/2020"
 a = "29/02/2020"
+#dad = "2020/02/01"
+#ad = "2020/02/29"
 
-days = []   #date
-fir = []   #confirmed
-oth = []    #dati[nation]
+one = []  
+two = []
+tre = []
 for info in dati[nation]:
-  fir.append(info["confirmed"])
-  days.append(info["date"])
-  oth.append(info)
-  strdata = datetime.datetime.strptime(info['date'], "%Y-%m-%d")
-  data = (strdata.strftime("%d/%m/%Y"))
-  date_object = datetime.datetime.strptime(data, "%d/%m/%Y")
-   
-results = []   
+  one.append(info["recovered"])
+  two.append(info["confirmed"])
+  tre.append(info["deaths"])
+
+
+dates = pd.date_range('22012020', periods = len(two))
+
+df = pd.DataFrame(index = dates)
+df['recovered'] = one
+df['confirmed'] = two
+df['deaths'] = tre
+resp = df[da : a]
+print(resp)
+
+
+
