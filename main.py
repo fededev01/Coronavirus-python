@@ -9,6 +9,7 @@ reponse = requests.get(url)
 dati = json.loads(reponse.content)
 
 nation = str(input("Insert here a nation\n"))
+print("Write one of those options: \nConfirmed, deaths, recovered, nuovi casi, nuovi morti, nuovi ricoverati, data, da-a")
 cosa = str(input("Insert here what do you want receive\n"))
 
 conf = [] 
