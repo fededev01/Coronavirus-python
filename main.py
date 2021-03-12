@@ -70,10 +70,12 @@ if cosa == "nuovi casi" or "confirmed" or "deaths" or "recovered" or "nuovi mort
       pass    
   except KeyError:
     if cosa == "data":
+      print("year-month-day")
       giorno = str(input("Insert here your day\n"))
       print(df[giorno : giorno])
     else:   
       if cosa == "da-a":
+        print("year-month-day")
         giorno1 = str(input("Insert here your day\n"))
         giorno2 = str(input("Insert here your day\n"))
         x = (df[giorno1 : giorno2])
