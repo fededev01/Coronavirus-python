@@ -4,27 +4,35 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#user input the nation he wants know more about
 nation = str(input("Insert here a nation\n"))
 
+#if user input "Italy", then he will receive data from this website
 if nation == "Italy":
     url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json'
     reponse = requests.get(url)
     dati = json.loads(reponse.content)
 
+#program takes data (confirmed cases, molecular buffers, deaths and new cases) from the website 
     conf, tamp, mor, n_pos = [], [], [], []
     for i in dati:
-      conf.append(i["totale_casi"])
-      tamp.append(i["tamponi"])
-      mor.append(i["deceduti"])
-      n_pos.append(i["nuovi_positivi"])
+      conf.append(i["totale_casi"]) #confirmed cases
+      tamp.append(i["tamponi"]) #molecular buffers carried out
+      mor.append(i["deceduti"]) #people who died
+      n_pos.append(i["nuovi_positivi"]) #difference between yesterday's confirmed cases and today's confirmed cases
 
-    del conf[-1]
-    del n_pos[-1]
-    nuovi_morti = np.array([mor])
-    del mor[-1]
+
+#i need to delete some data to ensure that length of arrays will be the same
+    del conf[-1] #delete last data about confirmed cases
+    del n_pos[-1] #delete last data about new cases
+    
+#i want an array with difference between yesterday's deaths and today's deaths  
+    nuovi_morti = np.array([mor]) #i get an array named "nuovi_morti" with same data of the list named "mor"
+    del mor[-1] #delete last data about deaths
     n_m = np.diff(nuovi_morti)
     nuovi_m = n_m.reshape(len(conf), 1)
 
+#i want an array with difference between yesterday's molecular buffers and today's molecular buffers
     nuovi_tamponi = np.array([tamp])
     del tamp[-1]
     n_t = np.diff(nuovi_tamponi)
