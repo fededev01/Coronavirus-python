@@ -33,7 +33,7 @@ if nation == "Italy":
     nuovi_m = n_m.reshape(len(conf), 1)
 
 #i want an array with difference between yesterday's molecular buffers and today's molecular buffers
-    nuovi_tamponi = np.array([tamp])
+    nuovi_tamponi = np.array([tamp]) #i get an array named "nuovi_tamponi" with same data of the list named "tamp"
     del tamp[-1]
     n_t = np.diff(nuovi_tamponi)
     nuovi_t= n_t.reshape(len(conf), 1)
